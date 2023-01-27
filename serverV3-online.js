@@ -541,6 +541,11 @@ app.post('/suggest', async function (req, res, next) {
 
 });
 
+app.get('/version', async function (req, res, next) {
+    let version="1.23.01.27.06"
+    res.end(JSON.stringify({ "version": version }));
+});
+
 app.listen(PORT, HOST, () => {
     console.log(`Running on http://${HOST}:${PORT}`);
   });
