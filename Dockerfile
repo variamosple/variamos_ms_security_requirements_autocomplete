@@ -16,4 +16,4 @@ RUN npm install
 COPY . .
 
 EXPOSE 9898
-CMD [ "node", "serverV3-online.js" ]
+CMD [ "npm", "start" ]
