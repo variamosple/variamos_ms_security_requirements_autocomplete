@@ -542,7 +542,7 @@ app.post('/suggest', async function (req, res, next) {
 });
 
 app.get('/version', async function (req, res, next) {
-    let version="1.23.01.27.06"
+    let version="1.23.02.01.02"
     res.end(JSON.stringify({ "version": version }));
 });
 
