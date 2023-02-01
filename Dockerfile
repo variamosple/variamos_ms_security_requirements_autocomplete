@@ -15,5 +15,5 @@ RUN npm install
 # Bundle app source
 COPY . .
 
-EXPOSE 4101
-CMD [ "node", "server.js" ]
+EXPOSE 9898
+CMD [ "node", "serverV3-online.js" ]
