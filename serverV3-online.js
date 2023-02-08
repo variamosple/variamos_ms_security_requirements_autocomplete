@@ -577,7 +577,7 @@ app.post('/suggest/domain', async function (req, res, next) {
         })
         console.log(c1);
         //var s=words.some(item => Object.keys(system).includes(item));
-        var s = Object.keys(system).some(element => {
+        var s = Object.keys(systemDomain).some(element => {
             return sentence.includes(element);
         })
         console.log(words);
@@ -640,11 +640,11 @@ app.post('/suggest/domain', async function (req, res, next) {
         //else if(priority.includes(req.body.q)) res.end(JSON.stringify(priority.filter(value=> value.includes(req.body.q))));
         //
         //else if(priority.includes(req.body.q)) res.end(JSON.stringify(priority.includes(req.body.q)))
-        if (sentence == "") { options.push.apply(options, Object.keys(conditions1)); options.push.apply(options, Object.keys(system)); console.log(options); }
+        if (sentence == "") { options.push.apply(options, Object.keys(conditions1)); options.push.apply(options, Object.keys(systemDomain)); console.log(options); }
 
         else if (!c1 && req.body.input != "" && !s && !p && !a1 && !sc && !a2 && !sm && !vc && !ad && !c2 && !aa) {
             if (Object.keys(conditions1).filter(value => value.includes(req.body.input)).length > 0) options = (Object.keys(conditions1).filter(value => value.includes(req.body.input)));
-            if (Object.keys(system).filter(value => value.includes(req.body.input)).length > 0) options = (Object.keys(system).filter(value => value.includes(req.body.input)));
+            if (Object.keys(systemDomain).filter(value => value.includes(req.body.input)).length > 0) options = (Object.keys(systemDomain).filter(value => value.includes(req.body.input)));
             console.log(options)
         }
         else if (c1 && req.body.input != "" && !s && !p && !a1 && !sc && !a2 && !sm && !vc && !ad && !c2 && !aa) {
@@ -659,7 +659,7 @@ app.post('/suggest/domain', async function (req, res, next) {
                 (words[words.length - 1]) != conditions1[elementInSentence(conditions1, sentence)]["next"] &&
                 (words[words.length - 2] + " " + words[words.length - 1]) != conditions1[elementInSentence(conditions1, sentence)]["next"])
                 options.push(conditions1[elementInSentence(conditions1, sentence)]["next"]);
-            else options = (Object.keys(system));
+            else options = (Object.keys(systemDomain));
         }
        else if(s && !p && !a1 && !sc && !a2 && !sm && !vc && !ad && !c2 && !aa)
         {
