@@ -668,7 +668,7 @@ app.post('/suggest/domain', async function (req, res, next) {
             if((systemDomain[words[words.length-1]]).placeholder1!="")
                options.push((systemDomain[words[words.length-1]]).placeholder1);
             else options.push((systemDomain[words[words.length-1]]).next);
-        else if(systemDomain[elementInSentence(systemDomain,sentence)]["next"]==(words[words.length-3]+" "+words[words.length-2]+" "+words[words.length-1]) && system[elementInSentence(system,sentence)].placeholder2!="")
+        else if(systemDomain[elementInSentence(systemDomain,sentence)]["next"]==(words[words.length-3]+" "+words[words.length-2]+" "+words[words.length-1]) && systemDomain[elementInSentence(systemDomain,sentence)].placeholder2!="")
             options.push(systemDomain[elementInSentence(systemDomain,sentence)].placeholder2);
         else if(systemDomain[elementInSentence(systemDomain,sentence)].placeholder3!="" ){
             options.push(systemDomain[elementInSentence(systemDomain,sentence)].placeholder3);
